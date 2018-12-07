@@ -1,0 +1,63 @@
+
+<%include partials/header%>
+
+
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="/admin/news/add" method="POST" enctype="multipart/form-data">
+
+                <p class="h5 text-center mb-4">Add a news article</p>
+
+                <div class="md-form">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <input type="text" name="name" id="form3" class="form-control">
+                    <label for="form3">Your name</label>
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-tag prefix grey-text"></i>
+                    <input type="text" name="subject" id="form32" class="form-control">
+                    <label for="form34">Subject</label>
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-pencil prefix grey-text"></i>
+                    <textarea type="text" name="article" id="form8" class="md-textarea" style="height: 100px"></textarea>
+                    <label for="form8">Short article text</label>
+                </div>
+                
+                <div class="md-form">
+                    <i class="fa fa-link prefix grey-text"></i>
+                    <input type="url" name="url" id="link" class="form-control">
+                    <label for="link">Blog url</label>
+                </div>
+                
+                <div class="md-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <% var placeholderPath = "https://images.unsplash.com/photo-1502979932800-33d311b7ce56?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9%0A&s=115e3c47cf8a55cec04b6687357f10a2" %>
+                            <img src="<%=placeholderPath%>" class="img-fluid img-thumbnail" id="image">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="mb-1">Article Avatar</h5>
+                            <input type="file" name="image" accept="image/*" onchange="loadFile(event)" class="form-control-file" id="file" aria-describedby="fileHelp" required>
+                            <small id="fileHelp" class="form-text text-muted">
+                            Please select an <strong>image</strong> that allows other users to identify your article.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-primary">Add <i class="fa fa-paper-add ml-1"></i></button>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+<%include partials/footer%>

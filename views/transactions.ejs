@@ -1,0 +1,262 @@
+<% include partials/header %>
+<% include partials/navigation %>
+
+<div class="container mt-5 pt-3">
+    
+    <!-- <% if(success && success.length > 0){ %>
+        <div class="mt-3 alert alert-success alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>Woo Hoo!</strong> <%= success %>
+        </div>
+    <% } %>
+    <% if(error && error.length > 0){ %>
+        <div class="mt-3 alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>Bummer!</strong> <%= error %>
+        </div>
+    <% } %> -->
+    
+    <div class="row">
+        <div class="col-md-6 mt-4">                                        
+            <!--Modal: Login / Register Form-->
+                    <!--Content-->
+
+                        <!--Modal cascading tabs-->
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs nav-justified tabs-2 light-blue darken-3" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"> Send</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"> Receieve</a>
+                                </li>
+                            </ul>
+
+                            <!-- Tab panels -->
+                            <div class="tab-content">
+                                <!--Panel 7-->
+                                <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                                    <!--Body-->
+                                    <div class="modal-body mb-1">
+                                        
+                                        <form action="/sendchain" method="POST">
+                                            <div class="md-form form-sm">
+                                                
+                                                <div class="md-form form-sm">
+                                                   <select name="coin" class="mdb-select">
+                                                        <option value="BTC">AEON</option>
+                                                        <!-- <option value="ETH">Ethereum</option>
+                                                        <option value="LTC">Litecoin</option>
+                                                        <option value="BCH">Bitcoin Cash</option>
+                                                        <option value="ADA">Cardano</option>
+                                                        <option value="XRP">Ripple</option>
+                                                        <option value="XLM">Stellar</option> -->
+                                                    </select>
+                                                    <label>Coin</label>
+                                                </div>
+                                                <div class="md-form form-sm">
+                                                    <i class="fab fa-google-wallet prefix"></i>
+                                                <input type="text" value="<%=user%>" name="publicKey" id="form22" class="form-control">
+                                                <label for="form22" >Your Wallet Address</label>
+                                            </div>
+
+                                                <div class="md-form form-sm">
+                                                        <i class="fab fa-google-wallet prefix"></i>
+                                                    <input type="text"  name="otherpublickey" id="form22" class="form-control">
+                                                    <label for="form22" >Enter receiver's Wallet Address</label>
+                                                </div>
+
+                                                <div class="md-form form-sm">
+                                                        <i class="fa fa-dollar prefix"></i>
+                                                        <input type="number" name="amount" id="form22" class="form-control">
+                                                        <label for="form22">Enter Amount</label>
+                                                    </div>
+
+                                                <div class="text-center mt-2">
+                                                    <button type="submit" class="btn btn-info" disabled>Receive</button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                                <!--/.Panel 7-->
+
+                                <!--Panel 8-->
+                                <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                                    <!--Body-->
+                                    <div class="modal-body mb-1">
+                                        
+                                        <form action="/receivechain" method="POST">
+                                     
+                                            <div class="md-form form-sm">
+                                               <select name="coin" class="mdb-select">
+                                                    <option value="BTC">AEON</option>
+                                                    <!-- <option value="ETH">Ethereum</option>
+                                                    <option value="LTC">Litecoin</option>
+                                                    <option value="BCH">Bitcoin Cash</option>
+                                                    <option value="ADA">Cardano</option>
+                                                    <option value="XRP">Ripple</option>
+                                                    <option value="XLM">Stellar</option> -->
+                                                </select>
+                                                <label>Coin</label>
+                                            </div>
+
+                                            <div class="md-form form-sm">
+                                                    <i class="fab fa-google-wallet prefix"></i>
+                                                <input type="text" value="<%=user%>" name="amount" id="form22" class="form-control">
+                                                <label for="form22" >Enter Wallet Address</label>
+                                            </div>
+                                            <div class="md-form form-sm">
+                                                    <i class="fa fa-btc prefix"></i>
+                                                    <input name="publickey" type="number" step='0.000000000001' value='0.0000' id="form22" class="form-control">
+                                                    <label for="form22">Enter amount to cash out</label>
+                                                </div>
+
+                                            <div class="text-center mt-2">
+                                                <button type="submit" class="btn btn-info" disabled>Send </button>
+                                            </div>
+                                        
+                                        </form>
+                                    </div>
+                                </div>
+                                <!--/.Panel 8-->
+                            </div>
+
+                    <!--/.Content-->
+            <!--Modal: Login / Register Form-->
+        </div>
+        <div class="col-md-6">
+            <!--User Card-->
+            <div class="card mt-4">
+
+                <!--Carousel Wrapper-->
+                <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+                    <!--Indicators-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="3"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="4"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="5"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="6"></li>
+                    </ol>
+                    <!--/.Indicators-->
+                    <!--Slides-->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <div class="view hm-black-light">
+                                <img style="height : 250px !important; max-width:100% !important; min-width:100% !important; object-fit: cover !important;" class="d-block w-100" src="/media/bitcoin.jpg" alt="">
+                                <div class="mask"></div>
+                            </div>
+                            <div class="carousel-caption">
+                                <h3 class="h3-responsive"></h3>
+                                <p class="lead"></p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <!--Mask color-->
+                            <div class="view hm-black-strong">
+                                <img style="height : 250px !important; max-width:100% !important; min-width:100% !important; object-fit: cover !important;" class="d-block w-100" src="/media/block.jpeg" alt="">
+                                <div class="mask"></div>
+                            </div>
+                            <div class="carousel-caption">
+                                <h3 class="h3-responsive"></h3>
+                                <p class="lead"></p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <!--Mask color-->
+                            <div class="view hm-black-slight">
+                                <img style="height : 250px !important; max-width:100% !important; min-width:100% !important; object-fit: cover !important;" class="d-block w-100" src="/media/block_3.jpg" alt="">
+                                <div class="mask"></div>
+                            </div>
+                            <div class="carousel-caption">
+                                <h3 class="h3-responsive"></h3>
+                                <p class="lead"></p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <!--Mask color-->
+                            <div class="view hm-black-slight">
+                                <img style="height : 250px !important; max-width:100% !important; min-width:100% !important; object-fit: cover !important;" class="d-block w-100" src="/media/Blockchain-Corporate.jpg" alt="">
+                                <div class="mask"></div>
+                            </div>
+                            <div class="carousel-caption">
+                                <h3 class="h3-responsive"></h3>
+                                <p class="lead"> </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <!--Mask color-->
+                            <div class="view hm-black-slight">
+                                <img style="height : 250px !important; max-width:100% !important; min-width:100% !important; object-fit: cover !important;" class="d-block w-100" src="/media/crypto.jpeg" alt="">
+                                <div class="mask"></div>
+                            </div>
+                            <div class="carousel-caption">
+                                <h3 class="h3-responsive"></h3>
+                                <p class="lead"> </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <!--Mask color-->
+                            <div class="view hm-black-slight">
+                                <img style="height : 250px !important; max-width:100% !important; min-width:100% !important; object-fit: cover !important;" class="d-block w-100" src="/media/cryptoinvestment.png" alt="">
+                                <div class="mask"></div>
+                            </div>
+                            <div class="carousel-caption">
+                                <h3 class="h3-responsive"></h3>
+                                <p class="lead"> </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <!--Mask color-->
+                            <div class="view hm-black-slight">
+                                <img style="height : 250px !important; max-width:100% !important; min-width:100% !important; object-fit: cover !important;" class="d-block w-100" src="/media/block.jpeg" alt="">
+                                <div class="mask"></div>
+                            </div>
+                            <div class="carousel-caption">
+                                <h3 class="h3-responsive"></h3>
+                                <p class="lead"> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.Slides-->
+                    <!--Controls-->
+                    <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    <!--/.Controls-->
+                </div>
+                <!--/.Carousel Wrapper-->
+
+                <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title"><%=email%></h4>
+                    <h4 class="card-title">AEON :<%=balance%></h4>
+                    <!--Text-->
+                    
+                </div>
+
+            </div>
+            <!--/.User Card-->
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>

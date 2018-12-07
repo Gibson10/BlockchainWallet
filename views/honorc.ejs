@@ -1,0 +1,696 @@
+<% include partials/hh_header %>
+
+
+
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-12 my-3">
+                <% if(success && success.length > 0){ %>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <strong>Woo Hoo!</strong> <%= success %>
+                    </div>
+                <% } %>
+                <% if(error && error.length > 0){ %>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <strong>Bummer!</strong> <%= error %>
+                    </div>
+                <% } %>
+            
+        </div>
+    </div>
+    <div class="row"></div>
+        <!-- Voting Panel Dropdown -->
+        <div class="col-md-4">
+
+
+
+            <div class="card text-center">
+                <form action="/honorc/vote/<%=id%>/<%=link%>" method="POST">
+                    <div class="card-body">
+                     
+                    
+
+                    
+                    <h6 class="card-title ml-3 mt-3">Honor Council</h6>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="honorc" required>
+                            <option value="No Candidate">No Candidate</option>
+                            <option value="effie">Effie  Akinyi</option>
+                            <option value="cecile">Cecile Matabaro</option>
+                            <option value="justice">Justice Ripinga</option>
+                            <option value="ayomikun">Ayomikun Oluwalana</option>
+                            <option value="aniaba">Aniaba Moaye</option>
+                            <option value="kaddija">Kaddija Keita</option>
+                            <option value="oluwamayowa">Oluwamayowa Akinkigbe</option>
+                            <option value="miche">Miche Williams</option>
+                            
+                        </select>
+                        <label>Honor Council</label>
+                    </div>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="honorc1" required>
+                            <option value="No Candidate">No Candidate</option>
+                            <option value="effie">Effie  Akinyi</option>
+                            <option value="cecile">Cecile Matabaro</option>
+                            <option value="justice">Justice Ripinga</option>
+                            <option value="ayomikun">Ayomikun Oluwalana</option>
+                            <option value="aniaba">Aniaba Moaye</option>
+                            <option value="kaddija">Kaddija Keita</option>
+                            <option value="oluwamayowa">Oluwamayowa Akinkigbe</option>
+                            <option value="miche">Miche Williams</option>
+                            
+                        </select>
+                        <label>Honor Council</label>
+                    </div>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="honorc2" required>
+                            <option value="No Candidate">No Candidate</option>
+                            <option value="effie">Effie  Akinyi</option>
+                            <option value="cecile">Cecile Matabaro</option>
+                            <option value="justice">Justice Ripinga</option>
+                            <option value="ayomikun">Ayomikun Oluwalana</option>
+                            <option value="aniaba">Aniaba Moaye</option>
+                            <option value="kaddija">Kaddija Keita</option>
+                            <option value="oluwamayowa">Oluwamayowa Akinkigbe</option>
+                            <option value="miche">Miche Williams</option>
+                            
+                        </select>
+                        <label>Honor Council</label>
+                    </div>
+                       <!-- <button type="submit" class="btn btn-default btn-rounded my-3">Vote</button> -->
+
+                    <!-- <h6 class="card-title ml-3 mt-3">Chairlady</h6>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="chairlady" required>
+                            <option value="No Candidate">No Candidate</option>
+                            <option value="zeinab">Zeinab Ibrahim</option>
+                            <option value="lobna">Lobna Jbeniani</option>
+                            <option value="keabetswe">Keabetswe Matshepo </option>
+                            
+                        </select>
+                        <label>Chairlady</label>
+                    </div>  -->
+
+                    <!-- <h6 class="card-title ml-3 mt-3">Secretary</h6>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="secretary" required>
+                        <option value="No Candidate">No Candidate</option>
+                            <option value="bupe">Bupe Lughano Kabaghe</option>
+                            <option value="omobolaji">Omobolaji Olalere</option>
+                        </select>
+                        <label>Secretary</label>
+                    </div> -->
+
+                    <!-- <h6 class="card-title ml-3 mt-3">Academic Rep</h6>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="academic_rep" required>
+                            <option value="No Candidate">No Candidate</option>
+                            <option value="mbarek"> Mohamed Mbarek  </option>
+                            <option value="kenza">Kenza Slaoui </option>
+                        </select>
+                        <label>Academic Rep</label>
+                    </div> -->
+
+                    <!-- <h6 class="card-title ml-3 mt-3">Clubs and Societies</h6>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="clubs_rep" required>
+                            <option value="No Candidate">No Candidate</option>
+                            <option value="nixon">Nixon Kariuki Chege</option>
+                            <option value="daisy">Daisy Chepchirchir Biegon</option>
+                        </select>
+                        <label>Clubs and Societies Rep</label>
+                    </div>  -->
+
+                     <!-- <h6 class="card-title ml-3 mt-3">Entertainment</h6>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="entertainment_rep" required>
+                            <option value="No Candidate">No Candidate</option>
+                            <option value="eriife">Eriife Aiyepeku</option>
+                            <option value="omrane">Omrane Ouedraogo</option>
+                        </select>
+                        <label>Entertainment Rep</label>
+                    </div> -->
+
+                    <!-- <h6 class="card-title ml-3 mt-3">IT Rep</h6>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="it_rep" required>
+                            <option value="No Candidate">No Candidate</option>
+                            <option value="david">David Eta</option>
+                        </select>
+                        <label>IT Rep</label>
+                    </div> -->
+<!-- 
+                    <h6 class="card-title ml-3 mt-3">Sports Rep</h6>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="sports_rep" required>
+                            <option value="No Candidate">No Candidate</option>
+                            <option value="omar">Omar Sarr</option>
+                            <option value="ugo">Ugo oguamanam</option>
+                        </select>
+                        <label>Sports Rep</label>
+                    </div>  -->
+
+                    <!-- <h6 class="card-title ml-3 mt-3">Wellness</h6>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="wellness_rep" required>
+                            <option value="No Candidate">No Candidate</option>
+                            <option value="tiyinoluwa">Tiyinoluwa Omotosho</option>
+                            <option value="cameron">Cameron Kasambala</option>
+                            <option value="aidah">Aidah Kiirya</option>
+                        </select>
+                        <label>Wellness Rep</label>
+                    </div> -->
+
+                    <!-- <h6 class="card-title ml-3 mt-3">Treasurer</h6>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="treasurer" required>
+                            <option value="No Candidate">No Candidate</option>
+                            <option value="ziad">Ziad El Khattabi</option>
+                            <option value="yacine">Yacine Sawadogo</option>
+                        </select>
+                        <label>Treasurer</label>
+                    </div> -->
+
+                <!-- <h6 class="card-title ml-3 mt-3">Honor Council</h6>
+                    <div class="md-form mt-3">
+                        <select class="mdb-select colorful-select dropdown-primary" name="honor_council" required>
+                            <option value="No Candidate">No Candidate</option>
+                            <option value="Jonathan Banza">Jonathan Banza</option>
+                        </select>
+                        <label>Honor Council</label>
+                    </div>  -->
+
+                   
+                        <!-- <button type="submit" class="btn btn-default btn-rounded my-3">Vote</button> -->
+                   
+                    
+
+                    </div>
+                </form>
+            </div>
+            
+            
+        </div>
+        
+
+        <!-- //Election paticipants -->
+
+        
+         <!-- //Election paticipants -->
+        <!-- /Voting Panel Dropdown -->
+
+        <!-- Candidates Card Panel -->
+        <div class="col-md-8">
+            
+
+            <!-- Unhash Panel -->
+            <!-- Material auto-sizing form -->
+            <!-- <form action="/unhash" method="POST"> -->
+                <!-- Grid row -->
+                <!-- <div class="form-row text-center align-items-center"> -->
+                    <!-- Grid column -->
+                    <!-- <div class="col-md-6 float-right"> -->
+                        <!-- Material input -->
+                        <!-- <div class="md-form">
+                            <input type="text" name="hashId" class="form-control mb-2" id="inlineFormInputMD" placeholder="Input your voting hash">
+                            <label class="sr-only" for="inlineFormInputMD">Name</label>
+                        </div>
+                    </div> -->
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <!-- <div class="col-md-6 float-left">
+                        <button type="submit" class="btn btn-primary mb-0">Unhash</button>
+                    </div> -->
+                    <!-- Grid column -->
+                <!-- </div> -->
+                <!-- Grid row -->
+            <!-- </form> -->
+            <!-- Material auto-sizing form -->
+            <!-- /Unhash Panel -->
+
+            <p class="text-center lead mt-3">Honor Council</p>
+            <!-- Grid row -->
+            <div class="row text-center pb-3">
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Effie Akinyi</strong>
+                        </h5>
+                        <p class="grey-text">Honor Council</p>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Cecile Matabaro</strong>
+                        </h5>
+                        <p class="grey-text">Honor Council</p>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Justice Ripinga</strong>
+                        </h5>
+                        <p class="grey-text">Honor Council</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Ayomikun Oluwalana</strong>
+                        </h5>
+                        <p class="grey-text">Honor Council</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Aniaba Moaye</strong>
+                        </h5>
+                        <p class="grey-text">Honor Council</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Kaddija Keita</strong>
+                        </h5>
+                        <p class="grey-text">Honor Council</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Mayowa Akinkugbe</strong>
+                        </h5>
+                        <p class="grey-text">Honor Council</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Miche Williams</strong>
+                        </h5>
+                        <p class="grey-text">Honor Council</p>
+                    </div>
+                </div>
+          
+            </div>
+             <!-- chairlady -->
+             <!-- <p class="text-center lead mt-3">Chairlady</p> -->
+            
+            <!-- <div class="row text-center pb-3">
+               
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Zeinab Ibrahim</strong>
+                        </h5>
+                        <p class="grey-text">Chairlady</p>
+                    </div>
+                </div>
+               
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Lobna Jbeniani</strong>
+                        </h5>
+                        <p class="grey-text">Chairlady</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Keabetswe Matshepo Zondi</strong>
+                        </h5>
+                        <p class="grey-text">Chairlady</p>
+                    </div>
+                </div>
+             
+                
+          
+            </div> -->
+             
+            <!-- secretary -->
+            <!-- <p class="text-center lead mt-3">Secretary</p>
+
+            <div class="row text-center pb-3">
+    
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Bupe Lughano Kabaghe</strong>
+                        </h5>
+                        <p class="grey-text">Secretary</p>
+                    </div>
+                </div>
+           
+               
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Omobolaji Olalere</strong>
+                        </h5>
+                        <p class="grey-text">Secretary</p>
+                    </div>
+                </div>
+              
+                
+          
+            </div> -->
+
+            <!-- treasurer -->
+            <!-- <p class="text-center lead mt-3">Treasurer</p>
+          
+            <div class="row text-center pb-3">
+
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Ziad El Khattabi </strong>
+                        </h5>
+                        <p class="grey-text">Treasurer</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Yacine Sawadogo</strong>
+                        </h5>
+                        <p class="grey-text">Treasurer</p>
+                    </div>
+                </div>
+              
+                
+          
+            </div> -->
+            <!-- entertainment -->
+            <!-- <p class="text-center lead mt-3">Entertainment</p>
+
+            <div class="row text-center pb-3">
+            
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Eriife Aiyepeku</strong>
+                        </h5>
+                        <p class="grey-text">Entertainment</p>
+                    </div>
+                </div>
+                
+               
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Omrane Ouedraogo</strong>
+                        </h5>
+                        <p class="grey-text">Entertainment</p>
+                    </div>
+                </div>
+            
+               
+          
+            </div> -->
+
+            <!-- clubs and societies -->
+            <!-- <p class="text-center lead mt-3">Clubs and Societies</p>
+
+            <div class="row text-center pb-3">
+               
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Nixon Kariuki Chege</strong>
+                        </h5>
+                        <p class="grey-text">Clubs and Society</p>
+                    </div>
+                </div>
+               
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Daisy Chepchirchir Biegon</strong>
+                        </h5>
+                        <p class="grey-text">Clubs and Societies</p>
+                    </div>
+                </div>
+             
+                
+          
+            </div> -->
+             
+            <!-- Academic -->
+            <!-- <p class="text-center lead mt-3">Academic Rep</p>
+          
+            <div class="row text-center pb-3">
+         
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Mohamed Mbarek</strong>
+                        </h5>
+                        <p class="grey-text">academic_rep</p>
+                    </div>
+                </div>
+              
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Kenza Slaoui</strong>
+                        </h5>
+                        <p class="grey-text">academic_rep</p>
+                    </div>
+                </div>
+             
+                
+          
+            </div> -->
+            <!-- sports -->
+            <!-- <p class="text-center lead mt-3">Sports</p>
+            
+            <div class="row text-center pb-3">
+                
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Omar Sarr</strong>
+                        </h5>
+                        <p class="grey-text">Sports</p>
+                    </div>
+                </div>
+           
+              
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Ugo oguamanam</strong>
+                        </h5>
+                        <p class="grey-text">Sports</p>
+                    </div>
+                </div>
+               
+          
+            </div> -->
+            <!-- wellness -->
+            <!-- <p class="text-center lead mt-3">Wellness Representative</p>
+ 
+            <div class="row text-center pb-3">
+]
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Aidah Namukose</strong>
+                        </h5>
+                        <p class="grey-text">Wellness Rep</p>
+                    </div>
+                </div>
+             
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Tiyinoluwa Omotosho</strong>
+                        </h5>
+                        <p class="grey-text">Wellness Rep</p>
+                    </div>
+                </div>
+
+               
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>Cameron Kasambala</strong>
+                        </h5>
+                        <p class="grey-text">Wellness Rep</p>
+                    </div>
+                </div>
+               
+                
+          
+            </div> -->
+            <!-- <p class="text-center lead mt-3">IT Representative</p>
+
+            <div class="row text-center pb-3">
+           
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="card card-body">
+                        <div class="avatar mx-auto my-3">
+                            <img style="height : 100px !important; width : 100px !important; object-fit: cover !important;" src="/media/ninja.png" class="rounded-circle img-fluid" alt="First sample avatar image">
+                        </div>
+                        <h5 class="font-weight-bold">
+                            <strong>David Eta</strong>
+                        </h5>
+                        <p class="grey-text">IT Representative</p>
+                    </div>
+                </div>
+              
+                
+            </div> -->
+
+             
+           
+
+            
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("search-members-input");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<% include partials/footer_z %>

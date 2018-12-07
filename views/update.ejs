@@ -1,0 +1,143 @@
+<%include partials/header%>
+<%include partials/navigation%>
+<div class="row container-fluid mt-4">
+<div class="col-md-4 mt-4">
+    <!--User Card-->
+    <div class="card mt-4 ml-4 ">
+
+        <!--Card image-->
+        <img class="img-fluid" src="/media/aeon.png" alt="Card image cap">
+
+        <!--Card content-->
+        <div class="card-body">
+            <!--Title-->
+            <div class="row">
+                <div class="col-md-6 ml-4">
+                        <span class="lead"> <%=name%></span>
+
+                    
+                </div>
+                <div class="text-center">
+                        <a href="" class="" data-toggle="modal" data-target="#modalLoginForm">Edit image</a>
+                        </div>
+                <div class="col-md-6 text-right">
+                </div>
+            </div>
+
+            <!--Text-->
+            
+    
+        <!--/Card image-->
+
+    </div>
+    <!--/.User Graph Card-->
+</div>
+</div>
+<div class="col-md-8 mt-4">
+    <!--User Card-->
+    <div class="card mt-4 ml-4 ">
+
+      <form action="/update" method="POST">
+        <!--Card image-->
+       
+        <div class="md-form ml-4 mt-4">
+            <i class="fa fa-user prefix"></i>
+            <input type="text" id="inputIconEx2" class="form-control"name="name">
+            <label for="inputIconEx2"> Username</label>
+          </div>
+          <div class="md-form ml-4">
+               
+                <i class="far fa-envelope prefix"></i>
+            <input type="text" id="inputIconEx1" value="<%=name1%>" class="form-control" name="username">
+            <label for="inputIconEx1">E-mail address</label>
+          </div>  
+         <div class="md-form ml-4">
+            <i class="fa fa-lock prefix"></i>
+                    <input type="text"  value="<%=password%>" id="inputIconEx2" class="form-control" name="password">
+                    <label for="inputIconEx2">Password</label>
+                  </div> 
+         <div class="md-form ml-4">
+         <i class="fa fa-lock prefix"></i>
+         <input type="text" id="inputIconEx2"    class="form-control" name="password">
+         <label for="inputIconEx2">Retype Password</label>
+         </div> 
+                
+                
+        <!--Card content-->
+        <div class="card-body md-form">
+            <!--Title-->
+              <div class="row">
+                <div class="col-md-6">
+                    <button type="submit"  class="btn btn-primary">Update</button>
+                </div>
+                <div class="col-md-6 text-right">
+                </div>
+            </div>
+            <!--Text-->
+            
+    
+        <!--/Card image-->
+
+    </div>
+</form>
+<!-- modal -->
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Upload image</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+
+    
+    <div class="modal-body mx-3">
+      <!-- <div class="md-form mb-5">
+        <i class="fa fa-envelope prefix grey-text"></i>
+        <input type="email" id="defaultForm-email" class="form-control validate">
+        <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+      </div> -->
+
+      <!-- <div class="md-form mb-4">
+        <i class="fa fa-lock prefix grey-text"></i>
+        <input type="password" id="defaultForm-pass" class="form-control validate">
+        <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+      </div> -->
+      <form class="md-form" method="POST" enctype="multipart/form-data" action="/upload">
+            <div class="file-field">
+                <div class="z-depth-1-half mb-4">
+                    <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" class="img-fluid" alt="example placeholder">
+                </div>
+                <div class="d-flex justify-content-center fileupload">
+                    <div class="">
+                        <!-- <span>Choose file</span> -->
+                        <input type="file" name="upload1">
+                        <input type="submit"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <!-- <div class="modal-footer d-flex justify-content-center">
+      <button class="btn btn-default" type="submit">Login</button>
+    </div> -->
+  </div>
+</div>
+</div>
+ <!-- modal -->
+
+<!-- <div class="text-center">
+<a href="" class="" data-toggle="modal" data-target="#modalLoginForm">Edit image</a>
+</div> -->
+<!-- <h1 style="text-align: center;"><a href="" data-target="#modalLoginForm">Edit avatar</a></h1> -->
+    <!--/.User Graph Card-->
+</div>
+</div>
+</div>
+
+
+<%include partials/footer%>

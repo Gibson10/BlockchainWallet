@@ -1,0 +1,239 @@
+
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                    <form class="mt-5" action="/sendcsv" method="POST">
+                        <!--Card image-->
+                       
+                        <div class="md-form ml-4">
+                            <i class="fa fa-user prefix"></i>
+                            <label for="inputIconEx2"> Name of Election</label>
+                            <input type="text" id="inputIconEx2" class="form-control"name="name">
+                          </div>
+                          <div class="md-form ml-4">
+                               
+                                <i class="far fa-envelope prefix"></i>
+                                <label for="inputIconEx1">Amount</label>
+                            <input type="number" id="inputIconEx1" class="form-control" name="amount">
+                          </div>  
+                         
+                          <section class="row component-section">
+                          <div class="col-md-9"> 
+                                <div class="component-box"> 
+                                    <!--Linked pickers example -->
+                                    <div class="pmd-card pmd-z-depth pmd-card-custom-view">
+                                        <div class="pmd-card-body">
+                                            <div class="row">
+                                                <div class="col-sm-6"> 
+                                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                                        <label for="regular1" class="control-label">Start Date</label>
+                                                        <input type="text" id="datepicker-start" class="form-control" name="start" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6"> 
+                                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                                        <label for="regular1" class="control-label">End Date</label>
+                                                        <input type="text" id="datepicker-end" class="form-control" name="end" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!--Linked pickers example end -->
+                                    
+                                </div>
+                            </div> 
+                        </section>
+                                  
+                                  
+                         
+                                
+                                
+                        <!--Card content-->
+                        <div class="card-body md-form">
+                            <!--Title-->
+                              <div class="row">
+                                <div class="col-md-6">
+                                    <button type="submit"  class="btn btn-primary">Create Election</button>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                </div>
+                            </div>   
+               </form>
+               </div>
+            </div>
+            <div class="col-md-2"></div>
+        
+                
+                <!doctype html>
+                <html lang="">
+                <head>
+                     <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <meta name="description" content="Propeller is a front-end responsive framework based on Material design & Bootstrap.">
+                    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+                    <title>Datetimepicker - Propeller Components</title>
+                    
+                    <!-- favicon --> 
+                    <link rel="icon" href="http://propeller.in/assets/images/favicon.ico" type="image/x-icon">
+                    
+                    <!-- Bootstrap --> 
+                    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> 
+                    
+                    <!-- Example docs (CSS for helping component example file)-->
+                    <link href="http://propeller.in/docs/css/example-docs.css" type="text/css" rel="stylesheet" />
+                
+                    <!-- Propeller card (CSS for helping component example file)-->
+                    <link href="http://propeller.in/components/card/css/card.css" type="text/css" rel="stylesheet" />
+                
+                    <!-- Propeller typography -->
+                    <link href="http://propeller.in/components/typography/css/typography.css" type="text/css" rel="stylesheet" />
+                    
+                    <!-- Google Icon Font -->
+                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                    <link href="http://propeller.in/components/icon/css/google-icons.css" type="text/css" rel="stylesheet" />
+                
+                    <!-- Propeller textbox -->
+                    <link href="http://propeller.in/components/textfield/css/textfield.css" type="text/css" rel="stylesheet"/>
+                
+                    <!-- Propeller bootstrap datetimepicker -->
+                    <link href="/css/bootstrap-datetimepicker.css" type="text/css" rel="stylesheet" />
+                    
+                    <!-- ProDatatable -->
+                    <link href="/css/pmd-datetimepicker.css" type="text/css" rel="stylesheet"/>
+                
+                </head>
+                
+                <body>
+                
+                <!--Datepicker -->
+                <div class="pmd-content pmd-content-custom" id="content"> 
+                    
+                    <!--component header -->
+                   
+                    
+                    <div class="container"> 
+                        
+                        
+                        
+                        		
+                        
+                       	 
+                        
+                      	 
+                        
+                       
+                        
+                        
+                        <!-- Datepicke with left header -->
+                        
+                        
+                    </div>
+                
+                </div> <!--Datepicker end -->
+                
+                <!-- jquery JS -->
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                
+                <!-- Bootstrap js -->
+                <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                
+                <!-- Propeller Global js --> 
+                <script src="http://propeller.in/components/global/js/global.js"></script>
+                
+                <!-- Textfield js --> 
+                <script type="text/javascript" src="http://propeller.in/components/textfield/js/textfield.js"></script>
+                
+                <!-- Datepicker moment with locales -->
+                <script type="text/javascript" language="javascript" src="/js/moment-with-locales.js"></script>
+                
+                <!-- Propeller Bootstrap datetimepicker -->
+                <script type="text/javascript" language="javascript" src="/js/bootstrap-datetimepicker.js"></script>
+                <script type="text/javascript">
+                    $(function () {
+                        
+                        /* Default date and time picker */
+                        $('#datetimepicker-default').datetimepicker({
+                            //locale: 'ru'
+                            //'format' : "YYYY-MM-DD hh:mm:ss", // HH:mm:ss
+                        });
+                
+                        /* Time picker only */
+                        $('#timepicker').datetimepicker({
+                            format: 'LT'
+                        });
+                        
+                        /* Linked date and time picker */
+                        // start date date and time picker 
+                        $('#datepicker-start').datetimepicker();
+                
+                        // End date date and time picker 
+                        $('#datepicker-end').datetimepicker({
+                            useCurrent: false 
+                        });
+                        
+                        // start date picke on chagne event [select minimun date for end date datepicker]
+                        $("#datepicker-start").on("dp.change", function (e) {
+                            $('#datepicker-end').data("DateTimePicker").minDate(e.date);
+                        });
+                        // Start date picke on chagne event [select maxmimum date for start date datepicker]
+                        $("#datepicker-end").on("dp.change", function (e) {
+                            $('#datepicker-start').data("DateTimePicker").maxDate(e.date);
+                        });
+                        
+                        // View mode datepicker [shows only years and month]
+                        $('#datepicker-view-mode').datetimepicker({
+                            viewMode: 'years',
+                            format: 'MM/YYYY'
+                        });
+                        
+                        // Disabled Days of the Week (Disable sunday and saturday) [ 0-Sunday, 1-Monday, 2-Tuesday   3-wednesday 4-Thusday 5-Friday 6-Saturday]
+                        $('#datepicker-disabled-days').datetimepicker({
+                             daysOfWeekDisabled: [0, 6]
+                        });
+                        
+                        // Inline datepicker
+                        $('#datepicker-inline').datetimepicker({
+                            inline: true
+                        });
+                        
+                        // Datepicker in popup
+                        $('#datepicker-popup-inline').datetimepicker({
+                            inline: true
+                        });
+                        
+                        // get date from popup datepicker
+                        $("#datepicker-dialog .btn-primary").on("click", function () {
+                            $("#datepicker-dialog").modal('hide');
+                
+                            var datepickerID =  $("[data-datepicker-popup='true']").attr("data-datepicker");
+                            var popupDatepickerValue = $("#"+datepickerID).data('date');
+                            var elementTagName = $("[data-datepicker-popup='true']").prop("tagName")
+                
+                            if(elementTagName == "INPUT" || elementTagName == "TEXTAREA"){
+                                $("[data-datepicker="+datepickerID+"]").val(popupDatepickerValue);	
+                            }else {
+                                $("[data-datepicker="+datepickerID+"]").text(popupDatepickerValue);	
+                            }
+                            
+                        });
+                        $("[data-header-left='true']").parent().addClass("pmd-navbar-left");
+                        // Datepicker left header
+                        $('#datepicker-left-header').datetimepicker({
+                            'format' : "YYYY-MM-DD HH:mm:ss", // HH:mm:ss
+                        });
+                        
+                    });
+                    
+                </script>
+                
+                </body>
+                
+                </html>
+                
+
+
+
+</div>
+
